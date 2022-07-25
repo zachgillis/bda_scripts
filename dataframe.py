@@ -6,4 +6,4 @@ directory = '/lustre/cv/projects/casa/jsteeb/uc4/bda_data'
 for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
     vis_xds = xr.open_zarr(filename)
-    print(len(vis_xds.DATA))
+    print(vis_xds.DATA)
