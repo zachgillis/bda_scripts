@@ -7,7 +7,6 @@ import dask
 directory = '/lustre/cv/projects/casa/jsteeb/uc4/bda_data'
 
 data = []
-count=0
 
 for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
@@ -20,10 +19,6 @@ for filename in os.listdir(directory):
     row.append(dask.compute(np.mean(np.abs(vis_xds.DATA)))[0].item(0))
     data.append(row)
     print(row)
-    count += 1
-    if count == 2:
-        break
-
 
 bda_df = pd.DataFrame(np.array(data), columns=['Decorrelation Factor', 'Max. Samples Averaged', 'Number of Visibilities', 'Average Amplitude of Visibilities'])
 print(bda_df)
