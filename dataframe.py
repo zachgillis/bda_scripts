@@ -14,6 +14,6 @@ for filename in os.listdir(directory):
     row.append(float(fn[7]))
     row.append(float(fn[9].split('.vis.zarr')[0]))
     row.append(len(vis_xds.DATA))
-    row.append(dask.compute(np.mean(np.abs(vis_xds.DATA))).value(0).item)
+    row.append(dask.compute(np.mean(np.abs(vis_xds.DATA))).item)
     print(row)
     break
