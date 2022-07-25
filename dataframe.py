@@ -26,7 +26,7 @@ for filename in os.listdir(directory):
 
 
 bda_df = pd.DataFrame(np.array(data), columns=['Decorrelation Factor', 'Max. Samples Averaged', 'Number of Visibilities', 'Average Amplitude of Visibilities'])
-print(df)
+print(bda_df)
 
 bda_df.to_csv('/users/zgillis/bda_scripts/bda.csv')
 bda_df.to_html('/users/zgillis/bda_scripts/bda.html')
