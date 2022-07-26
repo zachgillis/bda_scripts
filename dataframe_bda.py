@@ -16,7 +16,7 @@ for filename in os.listdir(directory):
     row.append(float(fn[7]))
     row.append(float(fn[9].split('.vis.zarr')[0]))
     row.append(len(vis_xds.DATA))
-    row.append(dask.compute(np.mean(np.abs(vis_xds.DATA)))[0].item(0))
+    row.append(dask.compute(((np.abs(vis_xds.DATA)).weighted(vis_xds.WEIGHT)).mean(skipna=True))[0].item(0))
     data.append(row)
     print(row)
 
