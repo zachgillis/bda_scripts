@@ -11,7 +11,7 @@ data = []
 for filename in ['small_ngvla_cont_dec_45.0_no_noise.vis.zarr']:
     f = os.path.join(directory, filename)
     print(f)
-    vis_xds = xr.open_zarr(f)
+    vis_xds = xr.open_zarr(f, consolidated = False)
     #row = []
     #fn = filename.split('_')
     #row.append(float(fn[7].split('.vis.zarr')[0]))
