@@ -10,6 +10,7 @@ data = []
 
 for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
+    print(f)
     vis_xds = xr.open_zarr(f)
     row = []
     fn = filename.split('_')
