@@ -9,7 +9,7 @@ directory = '/lustre/cv/projects/casa/bda/uc4'
 
 data = []
 
-for filename in directory:
+for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
     print(f)
 
