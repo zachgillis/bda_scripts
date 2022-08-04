@@ -15,7 +15,7 @@ for filename in os.listdir(directory):
     if 'zarr' not in f:
         continue
     zarr.consolidate_metadata(f)
-    vis_xds = xr.open_zarr(f)
+    vis_xds = xr.open_dataset(f, engine="zarr")
     #row = []
     #fn = filename.split('_')
     #row.append(float(fn[7].split('.vis.zarr')[0]))
