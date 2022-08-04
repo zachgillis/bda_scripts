@@ -14,6 +14,7 @@ for filename in os.listdir(directory):
     print(f)
     if 'zarr' not in f:
         continue
+    zarr.consolidate_metadata(f)
     vis_xds = xr.open_zarr(f)
     #row = []
     #fn = filename.split('_')
