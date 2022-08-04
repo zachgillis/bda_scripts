@@ -5,7 +5,7 @@ import pandas as pd
 import dask
 import zarr
 
-directory = '/lustre/cv/projects/casa/bda/uc4'
+directory = './lustre/cv/projects/casa/bda/uc4'
 
 data = []
 
