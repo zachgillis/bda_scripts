@@ -4,11 +4,11 @@ import numpy as np
 import pandas as pd
 import dask
 
-directory = '/lustre/cv/projects/casa/jsteeb/uc4'
+directory = '/lustre/cv/projects/casa/bda/uc4'
 
 data = []
 
-for filename in ['small_ngvla_cont_dec_45.0_no_noise.vis.zarr']:
+for filename in ['ngvla_cont_dec_45.0_no_noise.vis.zarr']:
     f = os.path.join(directory, filename)
     print(f)
     vis_xds = xr.open_zarr(f, consolidated = False)
