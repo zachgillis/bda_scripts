@@ -12,7 +12,8 @@ data = []
 for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
     print(f)
-
+    if 'zarr' not in f:
+        break
     vis_xds = xr.open_zarr(f)
     #row = []
     #fn = filename.split('_')
