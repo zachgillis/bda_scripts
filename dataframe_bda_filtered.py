@@ -11,7 +11,7 @@ data = []
 for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
     vis_xds = xr.open_zarr(f)
-    print(vis_xds)
+    print(vis_xds.UVW)
     row = []
     fn = filename.split('_')
     row.append(float(fn[7]))
