@@ -11,7 +11,7 @@ data = []
 for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
     vis_xds = xr.open_zarr(f)
-    print(np.sqrt(np.sum((vis_xds.UVW.values) ** 2)) < 13590.4688491672)
+    print(vis_xds.UVW.where(np.sqrt(np.sum((vis_xds.UVW) ** 2)) < 13590.4688491672))
     print(1)
     print(vis_xds)
     vis_xds_filtered = vis_xds.where(np.sqrt(np.sum((vis_xds.UVW) ** 2)) < 13590.4688491672)
