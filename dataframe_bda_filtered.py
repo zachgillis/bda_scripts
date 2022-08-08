@@ -13,7 +13,7 @@ for filename in os.listdir(directory):
     vis_xds = xr.open_zarr(f)
 
     max_bl = 13590.4688491672
-    mask = np.sqrt(np.sum((vis_xds.UVW) ** 2)) < max_bl
+    mask = dask.compute(np.sqrt(np.sum((vis_xds.UVW) ** 2)) < max_bl)
 
     vis_xds_filtered = vis_xds.where(mask, drop=True)
     print(1)
