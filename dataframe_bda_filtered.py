@@ -11,8 +11,10 @@ data = []
 for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
     vis_xds = xr.open_zarr(f)
+    print(1)
     print(vis_xds)
-    vis_xds_filtered = vis_xds.where(np.sqrt(np.sum((vis_xds.UVW) ** 2)))
+    vis_xds_filtered = vis_xds.where(np.sqrt(np.sum((vis_xds.UVW) ** 2)) < 13590.4688491672)
+    print(2)
     print(vis_xds_filtered)
     row = []
     fn = filename.split('_')
